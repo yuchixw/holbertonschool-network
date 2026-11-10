@@ -1,1 +1,1 @@
-# Network - Change your home IP
+# Network - Show attached IPs
