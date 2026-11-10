@@ -1,3 +1,10 @@
 #!/usr/bin/env bash
-# script that change localhost ip and facebook ip
-sudo bash -c 'echo -e "127.0.0.2 localhost \n 8.8.8.8 facebook.com" > /etc/hosts'
+# Modify /etc/hosts to redirect localhost to 127.0.0.2 and facebook.com to 8.8.8.8
+
+# Remove existing entries for localhost and facebook.com if they exist to avoid duplicates
+sudo sed -i '/localhost/d' /etc/hosts
+sudo sed -i '/facebook.com/d' /etc/hosts
+
+# Append new entries to /etc/hosts
+echo "127.0.0.2 localhost" | sudo tee -a /etc/hosts > /dev/null
+echo "8.8.8.8 facebook.com" | sudo tee -a /etc/hosts > /dev/null
