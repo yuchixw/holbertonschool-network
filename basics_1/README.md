@@ -1,1 +1,1 @@
-# Network - Show attached IPs
+# Network - Port listening on localhost
